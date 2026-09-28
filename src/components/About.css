@@ -1,0 +1,124 @@
+.about__layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.about__photo {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  aspect-ratio: 4 / 5;
+}
+
+.about__photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.about__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  filter: grayscale(0.15) contrast(1.03);
+}
+
+.about__photo-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  background: rgba(8, 11, 20, 0.82);
+  backdrop-filter: blur(2px);
+  transform: translateY(100%);
+  transition: transform 0.35s ease;
+}
+
+.about__photo:hover .about__photo-overlay,
+.about__photo:focus-within .about__photo-overlay {
+  transform: translateY(0);
+}
+
+.about__photo-overlay a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: #f1f5f9; /* fixed: the overlay is dark in both themes */
+  transition: color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.about__photo-overlay a:hover {
+  color: #7db1ff;
+  border-color: rgba(125, 177, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+.about__body {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  color: var(--text-secondary);
+  font-size: 16.5px;
+  margin-bottom: 40px;
+}
+
+.about__facts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.about__fact {
+  background: var(--bg-card);
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  transition: background 0.2s ease;
+}
+
+.about__fact:hover {
+  background: var(--bg-card-hover);
+}
+
+.about__fact-label {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.about__fact-value {
+  font-family: var(--font-display);
+  font-size: 16px;
+}
+
+@media (max-width: 760px) {
+  .about__layout {
+    grid-template-columns: 1fr;
+  }
+  .about__photo {
+    max-width: 260px;
+    aspect-ratio: 1 / 1;
+    margin: 0 auto;
+  }
+  .about__facts {
+    grid-template-columns: 1fr;
+  }
+}

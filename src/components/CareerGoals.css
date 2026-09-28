@@ -1,0 +1,9 @@
+.career__inner {
+  max-width: 800px;
+}
+
+.career__text {
+  font-size: 18px;
+  line-height: 1.75;
+  color: var(--text-secondary);
+}

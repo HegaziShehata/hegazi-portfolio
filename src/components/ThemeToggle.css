@@ -1,0 +1,47 @@
+.theme-toggle {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  width: 62px;
+  height: 32px;
+  padding: 0 8px;
+  border-radius: 100px;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+  color: var(--text-muted);
+  transition: border-color 0.2s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--border-strong);
+}
+
+/* Sliding thumb sits behind whichever icon is active */
+.theme-toggle__thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--accent);
+  transition: transform 0.25s ease;
+}
+
+.theme-toggle[aria-checked="true"] .theme-toggle__thumb {
+  transform: translateX(30px);
+}
+
+.theme-toggle__icon {
+  position: relative;
+  z-index: 1;
+  width: 14px;
+  height: 14px;
+  transition: color 0.2s ease;
+}
+
+.theme-toggle__icon.is-active {
+  color: var(--on-accent);
+}

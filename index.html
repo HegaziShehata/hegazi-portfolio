@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hegazi Shehata | Front-End Developer & UI/UX Designer</title>
+    <meta
+      name="description"
+      content="Portfolio of Hegazi Shehata — Front-End Developer specializing in React.js and UI/UX Design, based in Tanta, Gharbia, Egypt. View projects, skills, and training."
+    />
+    <meta name="keywords" content="Front-End Developer, React Developer, UI/UX Designer, Hegazi Shehata, JavaScript, Web Developer Egypt" />
+    <meta name="author" content="Hegazi Shehata Elmzayn" />
+    <meta name="color-scheme" content="dark light" />
+    <!-- Apply the saved theme before first paint to avoid a flash on refresh -->
+    <script>
+      (function () {
+        var theme = "dark";
+        try {
+          if (localStorage.getItem("theme") === "light") theme = "light";
+        } catch (e) {}
+        document.documentElement.setAttribute("data-theme", theme);
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
